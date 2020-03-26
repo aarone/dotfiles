@@ -1,0 +1,31 @@
+# returns seconds since epoch for a date in YYYY-MM-DD format
+function date-to-epoch() {
+
+    if [ -z $1 ]; then
+        echo "Usage: date-to-epoch YYYY-MM-DD"
+        return
+    fi
+
+    DATE="date"
+    if [[ "$(uname -a)" =~ "Darwin" ]]; then
+        DATE="gdate"
+    fi
+    $DATE --date="$1" +"%s"
+}
+
+# returns a date formatted like "Wed Jan  1 00:00:00 2020"
+# for a given seconds-baed epoch
+epoch-to-time() {
+  perl -e '$t=@ARGV[0]; if($t > 4505767703) { $t = $t/1000.0; } print "".localtime($t) . "\n"' $@
+}
+
+# modify as needed for whatever
+find-pre-2019-branches() {
+    for b in $(git branch -al | grep remotes/origin | grep -v mainline); do
+        short_branch=$(echo $b |  sed -e 's@remotes/origin/\(.*\)@\1@')
+        recent=$(git log -1 --format=%aI $b | egrep '2019')
+        if [ -z $recent ]; then
+            echo $short_branch
+        fi
+    done
+}

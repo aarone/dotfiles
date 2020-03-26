@@ -15,3 +15,12 @@ for completion in $brew_completions; do
         source $file_to_source
     fi
 done
+
+AWS_COMPLETIONS=$(brew --prefix)/share/zsh/site-functions/aws_zsh_completer.sh
+if [ -f $AWS_COMPLETIONS ];
+then
+    source $AWS_COMPLETIONS;
+fi
+
+fpath=(~/.zsh/completion $fpath $(brew --prefix)/share/zsh/site-functions)
+autoload -Uz compinit && compinit -i
