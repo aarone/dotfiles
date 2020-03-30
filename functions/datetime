@@ -14,10 +14,21 @@ function date-to-epoch() {
 }
 
 # returns a date formatted like "Wed Jan  1 00:00:00 2020"
-# for a given seconds-baed epoch
-epoch-to-time() {
+# for a given seconds-based epoch
+function epoch-to-time() {
   perl -e '$t=@ARGV[0]; if($t > 4505767703) { $t = $t/1000.0; } print "".localtime($t) . "\n"' $@
 }
+
+function epoch-minutes-ago() {
+  if [ -z $1 ]; then
+     echo "Usage: epoch-minutes-ago <minutes-ago>"
+     return
+  fi
+
+  minutes_ago=$1
+  echo "$(date +'%s') - 60 * $minutes_ago" | bc
+}
+
 
 # modify as needed for whatever
 find-pre-2019-branches() {
