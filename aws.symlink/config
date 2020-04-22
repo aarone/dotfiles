@@ -1,0 +1,4 @@
+[default]
+cli_timestamp_format = iso8601
+output = yaml
+region = us-west-2
