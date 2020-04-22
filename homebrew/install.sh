@@ -13,6 +13,9 @@ then
 fi
 
 # Install homebrew packages
+brew update || brew update
+brew upgrade
+
 brew install coreutils htop awscli binutils tree git
 
 exit 0
