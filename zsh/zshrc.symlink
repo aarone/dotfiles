@@ -1,5 +1,5 @@
 # shortcut to this dotfiles path is $ZSH
-export ZSH=$HOME/.dotfiles
+export ZSH=$HOME/Sandbox/dotfiles
 
 # your project folder that we can `c [tab]` to
 export PROJECTS=~/Sandbox
@@ -37,4 +37,10 @@ do
   source $file
 done
 
+if [ -f /usr/local/share/zsh/site-functions ]; then
+  source /usr/local/share/zsh/site-functions
+fi
+
 unset config_files
+
+export HOMEBREW_GITHUB_API_TOKEN=3542318df74fffc70e54c8fea349004ff55fb7a7

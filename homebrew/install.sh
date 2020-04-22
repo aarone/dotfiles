@@ -13,6 +13,6 @@ then
 fi
 
 # Install homebrew packages
-brew install grc coreutils spark
+brew install coreutils htop awscli binutils tree git
 
 exit 0

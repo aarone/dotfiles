@@ -4,7 +4,7 @@ export AWS_REGION=us-west-2
 export CLICOLOR=true
 export PATH=/usr/local/bin:${PATH}:${HOME}/bin:${HOME}/bin/JSTalk
 export ALTERNATE_EDITOR=emacs EDITOR=emacsclient VISUAL=emacsclient
-export TERM=xterm-256color
+export TERM=xterm-24bits
 
 fpath=($ZSH/functions $fpath)
 
