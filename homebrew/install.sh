@@ -16,6 +16,11 @@ fi
 brew update || brew update
 brew upgrade
 
-brew install coreutils htop awscli binutils tree git
+brew install \
+     awscli \
+     git \
+     htop \
+     jq \
+     tree
 
 exit 0

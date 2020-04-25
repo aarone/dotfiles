@@ -44,5 +44,3 @@ if [ -f /usr/local/share/zsh/site-functions ]; then
 fi
 
 unset config_files
-
-export HOMEBREW_GITHUB_API_TOKEN=3542318df74fffc70e54c8fea349004ff55fb7a7

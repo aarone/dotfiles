@@ -36,7 +36,7 @@ time to time to keep your environment fresh and up-to-date. You can find
 this script in `bin/`.
 
 ## topical
-
+ 
 Everything's built around topic areas. If you're adding a new area to your
 forked dotfiles — say, "Java" — you can simply add a `java` directory and put
 files in there. Anything with an extension of `.zsh` will get automatically
