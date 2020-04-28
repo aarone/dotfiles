@@ -18,9 +18,11 @@ brew upgrade
 
 brew install \
      awscli \
+     emacs \
      git \
      htop \
      jq \
+     tmux \
      tree
 
 exit 0
